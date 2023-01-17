@@ -3,7 +3,7 @@ package dlist
 import (
 	"fmt"
 
-	"github.com/nikhilnarayanan623/linkedlists/dlist/interfaces"
+	"github.com/nikhilnarayanan623/linked-list/dlist/interfaces"
 )
 
 type node struct {

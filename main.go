@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/nikhilnarayanan623/linkedlists/dlist"
-	"github.com/nikhilnarayanan623/linkedlists/slist"
+	"github.com/nikhilnarayanan623/linked-list/dlist"
+	"github.com/nikhilnarayanan623/linked-list/slist"
 )
 
 func main() {
