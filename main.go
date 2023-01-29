@@ -3,38 +3,129 @@ package main
 import (
 	"fmt"
 
+	"github.com/nikhilnarayanan623/linked-list/clist"
 	"github.com/nikhilnarayanan623/linked-list/dlist"
 	"github.com/nikhilnarayanan623/linked-list/slist"
 )
 
-func main() {
+//all linked lists are create in packages
 
+// main file
+// func signly for chekc signly linked list test
+// func doubly for chekc signly linked list test
+// func circular for chekc signly linked list test
+func main() {
+	// singly()
+	doubly()
+}
+
+func singly() {
 	var data, checkVal int
 
 	//singly liniked list
 	fmt.Println("singly linked list")
-	sl := slist.NewSinglyLinkedList() //get value from user
-	sl.Addvalue(3)                    //to add a single value
-	sl.AddMultipleValues()
+	sl := slist.NewSinglyLinkedList() //get new singly linked list
+	//to add multiple values
+	sl.AppendMultipleValues()
 
-	//doubly linked list
-	fmt.Println("doubly linked list")
-
-	dl := dlist.NewDoublyLinkedList()
-
-	//get values from user
-	dl.AddMultipleValues()
-
-	//show the list
-	dl.PrintAllForward()
+	sl.DisplayOrder()
 
 	//insert a values in the list after a specific number
-	fmt.Print("which number after you need to insert new value: ")
+	fmt.Println("Insert value after a specific value")
+	fmt.Print("Enter the number for check: ")
 	fmt.Scan(&checkVal)
 	fmt.Print("Enter the number you want to insert: ")
 	fmt.Scan(&data)
+	sl.InsertAfterAValue(checkVal, data)
+	sl.DisplayOrder()
 
-	dl.InsertDataAfterAValue(checkVal, data)
+	//insert a values in the list before a specific number
+	fmt.Println("Insert value before a specific value")
+	fmt.Print("Enter the number for check: ")
+	fmt.Scan(&checkVal)
+	fmt.Print("Enter the number you want to insert: ")
+	fmt.Scan(&data)
+	sl.InsertBeforeAValue(checkVal, data)
+	sl.DisplayOrder()
 
-	dl.PrintAllForward()
+	//insert a node to the begining of list
+	fmt.Print("Enter a value to inset begining of list: ")
+	fmt.Scan(&data)
+	sl.Prepend(data)
+	sl.DisplayOrder()
+
+	//delete a value from the list
+	fmt.Print("Enter a value to delete from list: ")
+	fmt.Scan(&data)
+	sl.DeleteValue(data)
+	sl.DisplayOrder()
+
+	//delet duplicate from linked list if its in a sorted order
+	fmt.Println("After removing duplicate from list if its in a sorted way")
+	sl.RemoveDuplicates()
+	sl.DisplayOrder()
+}
+
+func doubly() {
+	var data, checkVal int
+
+	//doubly liniked list
+	fmt.Println("doubly linked list")
+	dl := dlist.NewDoublyLinkedList() //get new singly linked list
+	//to add multiple values
+	dl.AppendMultipleValues()
+	dl.DisplayOrder()
+
+	//insert a values in the list after a specific number
+	fmt.Println("Insert value after a specific value")
+	fmt.Print("Enter the number for check: ")
+	fmt.Scan(&checkVal)
+	fmt.Print("Enter the number you want to insert: ")
+	fmt.Scan(&data)
+	dl.InsertAfterAValue(checkVal, data)
+	dl.DisplayOrder()
+
+	//insert a values in the list before a specific number
+	fmt.Println("Insert value before a specific value")
+	fmt.Print("Enter the number for check: ")
+	fmt.Scan(&checkVal)
+	fmt.Print("Enter the number you want to insert: ")
+	fmt.Scan(&data)
+	dl.InsertBeforeAValue(checkVal, data)
+	dl.DisplayOrder()
+
+	//insert a node to the begining of list
+	fmt.Print("Enter a value to inset begining of list: ")
+	fmt.Scan(&data)
+	dl.Prepend(data)
+	dl.DisplayOrder()
+
+	//delete a value from the list
+	fmt.Print("Enter a value to delete from list: ")
+	fmt.Scan(&data)
+	dl.DeleteValue(data)
+	dl.DisplayOrder()
+
+	//delet duplicate from linked list if its in a sorted order
+	fmt.Println("\nAfter removing duplicate from list if its in a sorted way")
+	dl.RemoveDuplicates()
+	dl.DisplayOrder()
+	dl.DisplayReverse()
+
+}
+
+func circular() {
+
+	//circular linked list
+
+	c1 := clist.NewcircularList()
+
+	c1.AppendMultipleValues()
+
+	// fmt.Println("Values in the circular linked list")
+	// c1.DisplayValues()
+
+	winner := c1.FindWinner()
+
+	fmt.Println("winner is at ", winner, "th position")
 }
