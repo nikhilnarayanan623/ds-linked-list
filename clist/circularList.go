@@ -147,7 +147,16 @@ func (c *circularList) FindWinner() int {
 		//
 	}
 
-	return victim.idx
+	//approach third with delete the next node
+
+	// for killer.next != killer {
+	// 	fmt.Println(killer.idx)
+	// 	killer.next = killer.next.next
+	// 	killer = killer.next
+	// }
+
+	return killer.idx
+
 }
 
 // game to delete 3rd st node and return the value of last node

@@ -8,6 +8,32 @@ import (
 	"github.com/nikhilnarayanan623/linked-list/slist"
 )
 
+func binarySearch(array []int, target int) bool {
+
+	var start, end = 0, len(array) - 1
+
+	var mid int
+
+	for start <= end {
+
+		mid = start + ((end - start) / 2)
+
+		if target == array[mid] {
+			return true
+		}
+
+		if target < array[mid] {
+			end = mid - 1
+		} else {
+			start = mid + 1
+		}
+	}
+
+	return false
+
+}
+
+
 //all linked lists are create in packages
 
 // main file
@@ -15,8 +41,8 @@ import (
 // func doubly for chekc signly linked list test
 // func circular for chekc signly linked list test
 func main() {
-	// singly()
-	doubly()
+
+	fmt.Println(binarySearch([]int{1, 2, 3, 4, 5, 6}, 10))
 }
 
 func singly() {

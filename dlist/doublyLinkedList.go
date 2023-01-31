@@ -280,7 +280,7 @@ func (d *doublyLinkedList) RemoveDuplicates() {
 	}
 
 	//consider this 1 2 3 3 3
-	// currentNode will be nil and prev will be 3 
+	// currentNode will be nil and prev will be 3
 	// need prev as tail and disconnect all other 3s
 
 	if currentNode.data == prev.data {
@@ -288,3 +288,4 @@ func (d *doublyLinkedList) RemoveDuplicates() {
 		d.tail = prev
 	}
 }
+
