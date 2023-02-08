@@ -3,36 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/nikhilnarayanan623/linked-list/clist"
-	"github.com/nikhilnarayanan623/linked-list/dlist"
-	"github.com/nikhilnarayanan623/linked-list/slist"
+	"github.com/nikhilnarayanan623/ds-linked-list/clist"
+	"github.com/nikhilnarayanan623/ds-linked-list/dlist"
+	"github.com/nikhilnarayanan623/ds-linked-list/slist"
 )
-
-func binarySearch(array []int, target int) bool {
-
-	var start, end = 0, len(array) - 1
-
-	var mid int
-
-	for start <= end {
-
-		mid = start + ((end - start) / 2)
-
-		if target == array[mid] {
-			return true
-		}
-
-		if target < array[mid] {
-			end = mid - 1
-		} else {
-			start = mid + 1
-		}
-	}
-
-	return false
-
-}
-
 
 //all linked lists are create in packages
 
@@ -42,7 +16,11 @@ func binarySearch(array []int, target int) bool {
 // func circular for chekc signly linked list test
 func main() {
 
-	fmt.Println(binarySearch([]int{1, 2, 3, 4, 5, 6}, 10))
+	c := clist.NewcircularList()
+
+	c.AppendMultipleValues()
+
+	c.FindWinner()
 }
 
 func singly() {
@@ -147,7 +125,6 @@ func circular() {
 	c1 := clist.NewcircularList()
 
 	c1.AppendMultipleValues()
-
 	// fmt.Println("Values in the circular linked list")
 	// c1.DisplayValues()
 

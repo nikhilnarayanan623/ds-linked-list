@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/nikhilnarayanan623/linked-list/clist/interfaces"
+	"github.com/nikhilnarayanan623/ds-linked-list/clist/interfaces"
 )
 
 type node struct {

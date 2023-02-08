@@ -3,7 +3,7 @@ package dlist
 import (
 	"fmt"
 
-	"github.com/nikhilnarayanan623/linked-list/dlist/interfaces"
+	"github.com/nikhilnarayanan623/ds-linked-list/dlist/interfaces"
 )
 
 type node struct {
@@ -288,4 +288,3 @@ func (d *doublyLinkedList) RemoveDuplicates() {
 		d.tail = prev
 	}
 }
-

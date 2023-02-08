@@ -3,7 +3,7 @@ package slist
 import (
 	"fmt"
 
-	"github.com/nikhilnarayanan623/linked-list/slist/interfaces"
+	"github.com/nikhilnarayanan623/ds-linked-list/slist/interfaces"
 )
 
 // for a single value in linked list
